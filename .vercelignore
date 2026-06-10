@@ -1,0 +1,13 @@
+.git
+.next
+.npm-cache
+.openai
+.wrangler
+build
+dist
+node_modules
+outputs
+work
+
+*.log
+*.tsbuildinfo
