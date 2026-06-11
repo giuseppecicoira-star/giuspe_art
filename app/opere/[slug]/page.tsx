@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import { notFound } from "next/navigation";
+import { AmbientSoundControl } from "@/components/ambient-sound";
 import { MarkWorkVisited } from "@/components/journey-memory";
 import { SiteNav } from "@/components/site-nav";
 import { getWorkBySlug, works } from "@/content/works";
@@ -89,7 +90,7 @@ export default async function WorkPage({ params }: PageProps) {
 
       <section className="work-intro">
         <div>
-          <span className="section-number">tema</span>
+          <span className="section-number">soglia</span>
           <h2>{work.theme}</h2>
         </div>
         <p>{work.longDescription}</p>
@@ -106,10 +107,16 @@ export default async function WorkPage({ params }: PageProps) {
         </div>
       </section>
 
+      <AmbientSoundControl
+        ambientSound={work.ambientSound}
+        ambientVolume={work.ambientVolume}
+        loop={work.loop}
+      />
+
       <section className="work-fragments">
         <div>
           <p className="section-label">Frammenti</p>
-          <h2>Coordinate, non spiegazioni.</h2>
+          <h2>Tracce per riconoscere, non per capire.</h2>
         </div>
         <div className="fragment-stack">
           {work.fragments.map((fragment) => (
@@ -123,12 +130,12 @@ export default async function WorkPage({ params }: PageProps) {
 
       <section className="work-media">
         <div className="media-box">
-          <p className="section-label">YouTube</p>
+          <p className="section-label">Visione</p>
           <h2>{isPublished ? "Video / visual" : "Visual non ancora aperto"}</h2>
           <a href={work.youtubeUrl}>{isPublished ? "Apri su YouTube" : "Placeholder YouTube"}</a>
         </div>
         <div className="streaming-box">
-          <p className="section-label">Eco quotidiana</p>
+          <p className="section-label">Musica</p>
           <div>
             <a href={work.spotifyUrl}>Spotify</a>
             <a href={work.appleMusicUrl}>Apple Music</a>

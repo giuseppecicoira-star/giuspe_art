@@ -17,7 +17,8 @@ export default function GiuspePage() {
           <h1>Mi chiamano Giuspe.</h1>
           <p>
             Osservo. A volte ciò che vedo fuori trova una eco dentro. Quando
-            succede, prima o poi, nasce una canzone.
+            succede, prima o poi, nasce un&apos;opera: a volte una canzone, a volte
+            una visione, a volte una stanza.
           </p>
         </div>
       </section>
@@ -34,8 +35,8 @@ export default function GiuspePage() {
           </p>
           <p>
             Questo luogo raccoglie alcune delle tracce lasciate lungo il
-            cammino: canzoni, visioni, parole, ambienti e porte che si aprono
-            una alla volta.
+            cammino: musica, visioni, parole, ambienti sonori e porte che si
+            aprono una alla volta.
           </p>
           <a className="secondary-button" href="/opere">
             Torna alle opere

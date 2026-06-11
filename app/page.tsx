@@ -33,14 +33,15 @@ export default function Home() {
           <div className="threshold-lines" aria-label="Immagini guida">
             <span>Una finestra.</span>
             <span>Uno specchio.</span>
-            <span>Una camminata sotto la pioggia.</span>
-            <span>Il vento in un prato.</span>
-            <span>Un martello tra i fossili.</span>
-            <span>Alcune canzoni.</span>
+            <span>Un bosco sotto la pioggia.</span>
+            <span>Il vento sopra una collina.</span>
+            <span>Una luce che si frammenta.</span>
+            <span>Alcune opere.</span>
           </div>
           <p>
-            Qui non troverai verità da seguire. Troverai prospettive. Alcune
-            potrebbero assomigliare a qualcosa che avevi smesso di ascoltare.
+            Qui non troverai verità da seguire. Troverai forme in cui
+            riconoscere qualcosa che era già presente, ma non aveva ancora una
+            stanza.
           </p>
           <JourneyMemory
             firstSlug={firstWork.slug}
@@ -60,11 +61,11 @@ export default function Home() {
       <section className="manifesto-section">
         <div className="section-number">01</div>
         <div>
-          <h2>Giuspe non offre risposte. Offre punti di osservazione.</h2>
+          <h2>Le opere non spiegano. Permettono un riconoscimento.</h2>
           <p>
-            Ogni opera è una stanza. Ogni stanza ha un ambiente, una ferita, una
-            domanda, una forma di luce che non forza il visitatore a credere:
-            gli permette di guardare da un punto diverso.
+            Il visitatore non deve sentirsi istruito. Deve sentire che qualcosa
+            di già presente dentro di lui ha trovato una forma, un ambiente, una
+            fenditura da attraversare.
           </p>
         </div>
       </section>
@@ -120,8 +121,8 @@ export default function Home() {
         </div>
         <div className="fragment-lines">
           <p>
-            Una solitudine, una ferita, una distanza, una rinascita: non come
-            definizioni, ma come tracce da attraversare.
+            Un mistero, una ferita, una distanza, una rinascita: non come
+            definizioni, ma come tracce lasciate dentro una stanza.
           </p>
           <a className="secondary-button" href="/frammenti">
             Leggi i frammenti

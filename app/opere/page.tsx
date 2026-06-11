@@ -6,7 +6,7 @@ import { futureWorks, works } from "@/content/works";
 export const metadata: Metadata = {
   title: "Opere | Giuspe",
   description:
-    "Il percorso delle opere di Giuspe: stanze, visioni e porte non ancora aperte.",
+    "Il percorso delle opere di Giuspe: musica, visioni, ambienti e porte non ancora aperte.",
 };
 
 export default function WorksPage() {
@@ -16,10 +16,11 @@ export default function WorksPage() {
         <SiteNav />
         <div className="inner-hero-copy">
           <p className="section-label">Percorso delle opere</p>
-          <h1>Le stanze non si aprono tutte insieme.</h1>
+          <h1>Un luogo che contiene opere.</h1>
           <p>
             Alcune sono già attraversabili. Altre si avvicinano. Altre ancora
             restano forme lontane, quasi illeggibili, finché non sarà il momento.
+            La canzone è una soglia, non l&apos;intero luogo.
           </p>
         </div>
       </section>

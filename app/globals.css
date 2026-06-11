@@ -187,6 +187,7 @@ input {
 .giuspe-note p,
 .work-intro p,
 .vision-text p,
+.ambient-sound p,
 .fragment-card p,
 .visual-note p {
   margin: 24px 0 0;
@@ -206,6 +207,7 @@ input {
 .secondary-button,
 .text-link,
 .trace-form button,
+.ambient-button,
 .media-box a,
 .streaming-box a,
 .work-nav a {
@@ -233,6 +235,7 @@ input {
 }
 
 .secondary-button,
+.ambient-button,
 .media-box a,
 .streaming-box a,
 .work-nav a {
@@ -246,6 +249,7 @@ input {
 .secondary-button:hover,
 .text-link:hover,
 .trace-form button:hover,
+.ambient-button:hover,
 .media-box a:hover,
 .streaming-box a:hover,
 .work-nav a:hover {
@@ -253,6 +257,7 @@ input {
 }
 
 .secondary-button:hover,
+.ambient-button:hover,
 .media-box a:hover,
 .streaming-box a:hover,
 .work-nav a:hover {
@@ -327,6 +332,7 @@ input {
 .giuspe-note,
 .work-intro,
 .work-vision,
+.ambient-sound,
 .work-fragments,
 .work-media,
 .visual-notes,
@@ -346,6 +352,7 @@ input {
 .fragment-preview h2,
 .continue-section h2,
 .work-intro h2,
+.ambient-sound h2,
 .work-fragments h2,
 .media-box h2,
 .inner-hero-copy h1 {
@@ -738,6 +745,7 @@ input {
 .work-hero-copy p {
   max-width: 660px;
   font-size: 20px;
+  overflow-wrap: break-word;
 }
 
 .locked-message {
@@ -773,6 +781,7 @@ input {
 }
 
 .work-vision,
+.ambient-sound,
 .work-fragments,
 .work-media,
 .visual-notes {
@@ -784,8 +793,16 @@ input {
   background: var(--black);
 }
 
+.ambient-sound {
+  background:
+    radial-gradient(circle at 18% 0%, color-mix(in srgb, var(--work-accent) 18%, transparent), transparent 34%),
+    var(--work-bg);
+  border-block: 1px solid var(--line);
+}
+
 .vision-panel,
 .vision-text,
+.ambient-panel,
 .media-box,
 .streaming-box,
 .visual-note {
@@ -800,6 +817,56 @@ input {
   color: var(--warm-white);
   font-size: 30px;
   line-height: 1.08;
+}
+
+.ambient-panel {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+}
+
+.ambient-button {
+  width: 100%;
+  min-height: 72px;
+  justify-content: space-between;
+  gap: 14px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.ambient-button[aria-pressed="true"] {
+  border-color: color-mix(in srgb, var(--work-accent) 76%, var(--warm-white));
+  background: color-mix(in srgb, var(--work-accent) 24%, transparent);
+}
+
+.ambient-button span,
+.ambient-button small {
+  display: block;
+}
+
+.ambient-button small {
+  color: var(--warm-dim);
+  font-size: 11px;
+  font-weight: 680;
+  line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.ambient-layers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ambient-layers span {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 10px;
+  color: var(--warm-muted);
+  background: rgba(7, 7, 6, 0.24);
+  font-size: 12px;
+  line-height: 1;
 }
 
 .work-fragments {
@@ -883,11 +950,12 @@ input {
   .site-footer,
   .works-path,
   .fragments-grid,
-  .giuspe-note,
-  .work-intro,
-  .work-vision,
-  .work-fragments,
-  .work-media,
+    .giuspe-note,
+    .work-intro,
+    .work-vision,
+    .ambient-sound,
+    .work-fragments,
+    .work-media,
   .visual-notes,
   .work-nav {
     padding: 88px 24px;
@@ -896,10 +964,11 @@ input {
   .manifesto-section,
   .fragment-preview,
   .continue-section,
-  .giuspe-note,
-  .work-intro,
-  .work-vision,
-  .work-fragments,
+    .giuspe-note,
+    .work-intro,
+    .work-vision,
+    .ambient-sound,
+    .work-fragments,
   .work-media,
   .visual-notes {
     grid-template-columns: minmax(160px, 0.36fr) minmax(0, 1fr);
@@ -910,6 +979,7 @@ input {
   .fragment-preview h2,
   .continue-section h2,
   .work-intro h2,
+  .ambient-sound h2,
   .work-fragments h2,
   .media-box h2,
   .inner-hero-copy h1 {
@@ -995,10 +1065,11 @@ input {
   .site-footer,
   .works-path,
   .fragments-grid,
-  .giuspe-note,
-  .work-intro,
-  .work-vision,
-  .work-fragments,
+    .giuspe-note,
+    .work-intro,
+    .work-vision,
+    .ambient-sound,
+    .work-fragments,
   .work-media,
   .visual-notes,
   .work-nav {
@@ -1048,13 +1119,47 @@ input {
     font-size: 18px;
   }
 
+  .work-hero-copy p {
+    max-width: calc(100vw - 36px);
+    font-size: 18px;
+  }
+
   .primary-button,
   .secondary-button,
+  .ambient-button,
   .media-box a,
   .streaming-box a,
   .work-nav a,
   .trace-form button {
     width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    gap: 8px;
+    padding: 18px;
+  }
+
+  .brand span:last-child {
+    display: none;
+  }
+
+  .nav-links {
+    max-width: calc(100vw - 78px);
+  }
+
+  .work-hero-copy {
+    width: 100vw;
+    max-width: 100vw;
+  }
+
+  .work-hero-copy p {
+    width: min(100%, calc(100vw - 36px));
+    max-width: calc(100vw - 36px);
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: anywhere;
   }
 }
 

@@ -24,10 +24,11 @@ export default function FragmentsPage() {
         <SiteNav />
         <div className="inner-hero-copy">
           <p className="section-label">Frammenti</p>
-          <h1>Non tutto diventa canzone nello stesso momento.</h1>
+          <h1>Non tutto prende forma nello stesso linguaggio.</h1>
           <p>
-            Alcune cose restano appunti. Altre diventano immagini. Altre ancora
-            aspettano una stanza in cui essere ascoltate.
+            Alcune cose restano appunti. Altre diventano immagini, suoni,
+            ambienti. Altre ancora aspettano una stanza in cui essere
+            riconosciute.
           </p>
         </div>
       </section>

@@ -1,5 +1,12 @@
 export type WorkStatus = "published" | "coming_soon" | "hidden" | "locked" | "draft";
 
+export type AmbientSoundProfile =
+  | "rain_forest"
+  | "dry_wind"
+  | "tense_village"
+  | "distant_room"
+  | "open_wind";
+
 export type Work = {
   id: string;
   slug: string;
@@ -24,6 +31,14 @@ export type Work = {
   spotifyUrl: string;
   youtubeUrl: string;
   appleMusicUrl: string;
+  ambientSound: {
+    profile: AmbientSoundProfile;
+    label: string;
+    description: string;
+    layers: string[];
+  };
+  ambientVolume: number;
+  loop: boolean;
   fragments: {
     id: string;
     title?: string;
@@ -44,30 +59,32 @@ export const works: Work[] = [
     id: "work-melissa",
     slug: "melissa",
     title: "Melissa",
-    subtitle: "Il fantasma della solitudine ritrovato dal passato.",
+    subtitle: "Il silenzio prima di una scelta definitiva.",
     order: 1,
     status: "published",
     releaseHint: "prima porta aperta",
     theme:
-      "Il fantasma della solitudine e dell'inadeguatezza ritrovato dal passato.",
+      "Un istante sospeso: il mistero dei Fantasma Melissa prima che la luce diventi presenza.",
     shortDescription:
-      "Una memoria fragile torna a bussare: non per spaventare, ma per essere finalmente guardata.",
+      "Un bosco notturno, una presenza indefinita, poi una luce che si frammenta e diventa speranza.",
     longDescription:
-      "Melissa abita una soglia notturna. Non è un'apparizione da temere, ma una parte rimasta indietro, una presenza che la pioggia e la nebbia riportano vicino.",
-    environment: "Notte, bosco, pioggia leggera, nebbia, presenza fragile.",
+      "Melissa non cerca colpevoli e non cerca spiegazioni. Osserva l'istante prima, il punto fragile in cui una presenza sembra quasi svanire e invece comincia a cambiare forma.",
+    environment:
+      "Bosco notturno, nebbia, pioggia leggera, presenza indefinita, luce distante.",
     vision:
-      "Un bosco di notte, immerso in una pioggia sottile. La nebbia non nasconde tutto: lascia intravedere. Tra gli alberi non è chiaro se ci sia qualcuno, un ricordo, una parte di sé o una presenza mai davvero andata via.",
+      "La solitudine iniziale non è il punto di arrivo. La luce esplode, si frammenta, piove sulla città e diventa presenza diffusa: possibilità di riconoscere il prossimo.",
     keywords: [
-      "fantasma",
-      "solitudine",
-      "inadeguatezza",
-      "memoria",
-      "ritorno",
+      "fantasma melissa",
+      "mistero",
+      "silenzio",
+      "fragilità",
+      "compassione",
+      "trasformazione",
+      "speranza",
       "bosco",
-      "notte",
       "nebbia",
       "pioggia",
-      "presenza",
+      "luce",
     ],
     palette: {
       background: "#07080a",
@@ -79,27 +96,48 @@ export const works: Work[] = [
     spotifyUrl: "https://open.spotify.com/",
     youtubeUrl: "https://www.youtube.com/",
     appleMusicUrl: "https://music.apple.com/",
+    ambientSound: {
+      profile: "rain_forest",
+      label: "Pioggia nel bosco",
+      description: "Pioggia leggera, bosco, vento lontano.",
+      layers: ["pioggia leggera", "bosco", "vento lontano"],
+    },
+    ambientVolume: 0.24,
+    loop: true,
     fragments: [
       {
         id: "melissa-frag-1",
-        body: "Non tutto ciò che ritorna vuole ferire. A volte vuole solo essere riconosciuto.",
+        body: "Non è una tragedia da guardare da lontano. È un passaggio che chiede compassione.",
         type: "poetic",
         visibility: "public",
       },
       {
         id: "melissa-frag-2",
-        body: "La solitudine non sparisce: cambia stanza, cambia voce, aspetta una notte abbastanza quieta.",
+        body: "La luce non cancella il buio: lo attraversa, si spezza, poi arriva altrove.",
         type: "reflection",
+        visibility: "public",
+      },
+      {
+        id: "melissa-frag-3",
+        body: "A volte riconoscere il prossimo comincia da una presenza indefinita tra gli alberi.",
+        type: "visual",
         visibility: "public",
       },
     ],
     visualNotes: [
       {
         id: "melissa-visual-1",
-        title: "Bosco, non incubo",
+        title: "Passaggio, non tragedia",
         description:
-          "L'ambiente deve restare sospeso e intimo. La paura è solo una vibrazione laterale, mai il centro.",
+          "L'ambiente deve restare misterioso e compassionevole. Il centro non è il dramma, ma la trasformazione.",
         mediaType: "image",
+      },
+      {
+        id: "melissa-visual-2",
+        title: "La luce diffusa",
+        description:
+          "La luce esplode, si frammenta e cade sulla città come una possibilità di riconoscimento.",
+        mediaType: "video",
       },
     ],
   },
@@ -142,6 +180,14 @@ export const works: Work[] = [
     spotifyUrl: "https://open.spotify.com/",
     youtubeUrl: "https://www.youtube.com/",
     appleMusicUrl: "https://music.apple.com/",
+    ambientSound: {
+      profile: "dry_wind",
+      label: "Vento secco",
+      description: "Ambiente arido, scricchiolii, vento secco.",
+      layers: ["vento secco", "ambiente arido", "scricchiolii"],
+    },
+    ambientVolume: 0.2,
+    loop: true,
     fragments: [
       {
         id: "miseria-frag-1",
@@ -206,6 +252,14 @@ export const works: Work[] = [
     spotifyUrl: "https://open.spotify.com/",
     youtubeUrl: "https://www.youtube.com/",
     appleMusicUrl: "https://music.apple.com/",
+    ambientSound: {
+      profile: "tense_village",
+      label: "Paese distante",
+      description: "Paese lontano, vento, atmosfera tesa.",
+      layers: ["paese lontano", "vento", "atmosfera tesa"],
+    },
+    ambientVolume: 0.18,
+    loop: true,
     fragments: [
       {
         id: "livida-frag-1",
@@ -268,6 +322,14 @@ export const works: Work[] = [
     spotifyUrl: "https://open.spotify.com/",
     youtubeUrl: "https://www.youtube.com/",
     appleMusicUrl: "https://music.apple.com/",
+    ambientSound: {
+      profile: "distant_room",
+      label: "Distanza rarefatta",
+      description: "Aria ferma, soglia, presenza lontana.",
+      layers: ["aria ferma", "soglia", "presenza lontana"],
+    },
+    ambientVolume: 0.16,
+    loop: true,
     fragments: [
       {
         id: "non-posso-frag-1",
@@ -287,32 +349,33 @@ export const works: Work[] = [
     ],
   },
   {
-    id: "work-carezze",
-    slug: "carezze",
-    title: "Carezze",
-    subtitle: "Lasciarsi sollevare senza perdere la propria essenza.",
+    id: "work-carezza",
+    slug: "carezza",
+    title: "Carezza",
+    subtitle: "Diventare vento. Raggiungere qualcun altro.",
     order: 5,
     status: "locked",
     releaseHint: "porta lontana",
     theme:
-      "Il lasciarsi sollevare, dissolversi leggermente e raggiungere qualcuno come polline portato dal vento.",
+      "Il vento raccoglie, solleva, dissolve e trasforma il protagonista nella carezza che arriverà altrove.",
     shortDescription:
-      "Una collina, il vento, la possibilità di dissolversi senza scomparire.",
+      "Una collina verde, il vento, la possibilità di dissolversi e continuare come presenza.",
     longDescription:
-      "Carezze è fiducia nel movimento. Un corpo perde peso, diventa particella, raggiunge qualcuno senza invadere. Si posa. Viene accolto.",
-    environment: "Collina verde, vento, dissoluzione, polline, accoglienza.",
+      "Carezza parla di trasformazione. Il vento non accarezza soltanto: raccoglie, solleva, dissolve. A quel punto il protagonista stesso diventa vento, presenza, nuova carezza per qualcun altro.",
+    environment: "Collina verde, spazio aperto, aria, movimento, leggerezza.",
     vision:
-      "Una collina verde. Il vento arriva senza violenza. Prima sfiora. Poi solleva. Poi trascina. Il corpo perde peso, si dissolve in particelle leggere, come polline.",
+      "Una collina verde. Il vento arriva senza violenza. Prima raccoglie, poi solleva, poi dissolve. Il corpo perde peso e smette di essere centro: diventa movimento che potrà raggiungere qualcun altro.",
     keywords: [
       "carezza",
       "vento",
       "collina",
       "verde",
       "dissoluzione",
-      "polline",
+      "trasformazione",
       "leggerezza",
       "accoglienza",
       "abbandono",
+      "continuità",
     ],
     palette: {
       background: "#0d1510",
@@ -320,24 +383,38 @@ export const works: Work[] = [
       accent: "#9eaa70",
       muted: "#64745f",
     },
-    heroImage: "/opere/carezze.png",
+    heroImage: "/opere/carezza.png",
     spotifyUrl: "https://open.spotify.com/",
     youtubeUrl: "https://www.youtube.com/",
     appleMusicUrl: "https://music.apple.com/",
+    ambientSound: {
+      profile: "open_wind",
+      label: "Vento morbido",
+      description: "Vento morbido, erba, spazio aperto.",
+      layers: ["vento morbido", "erba", "spazio aperto"],
+    },
+    ambientVolume: 0.22,
+    loop: true,
     fragments: [
       {
-        id: "carezze-frag-1",
+        id: "carezza-frag-1",
         body: "Non tutto ciò che si dissolve sparisce. Qualcosa, finalmente, arriva.",
         type: "poetic",
+        visibility: "public",
+      },
+      {
+        id: "carezza-frag-2",
+        body: "Fidarsi del vento significa accettare di non sapere in quale forma si continuerà.",
+        type: "reflection",
         visibility: "public",
       },
     ],
     visualNotes: [
       {
-        id: "carezze-visual-1",
-        title: "Leggerezza non zuccherosa",
+        id: "carezza-visual-1",
+        title: "Sequenza di trasformazione",
         description:
-          "La luce deve aprire senza addolcire troppo: fiducia, non evasione.",
+          "Vento, sollevamento, dissoluzione, trasformazione, nuova carezza: la pagina deve suggerire continuità, non evasione.",
         mediaType: "image",
       },
     ],
