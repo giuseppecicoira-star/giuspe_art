@@ -678,25 +678,35 @@ input {
   background: var(--black);
 }
 
-.quiet-portrait {
+.author-portrait {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  aspect-ratio: 4 / 5;
   min-height: 360px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  display: grid;
-  place-items: end start;
-  padding: 24px;
-  background:
-    linear-gradient(135deg, rgba(143, 32, 40, 0.58), rgba(7, 7, 6, 0.84)),
-    url("/giuspe-studio.png") center / cover no-repeat;
-  background-blend-mode: multiply, normal;
+  background: var(--black-soft);
   box-shadow: var(--shadow);
 }
 
-.quiet-portrait span {
-  color: var(--warm-white);
-  font-size: 84px;
-  font-weight: 780;
-  line-height: 0.8;
+.author-portrait::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, transparent 46%, rgba(7, 7, 6, 0.34)),
+    linear-gradient(90deg, rgba(7, 7, 6, 0.16), transparent 42%);
+  pointer-events: none;
+}
+
+.author-portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.92) contrast(1.04) brightness(0.86);
 }
 
 .work-page {

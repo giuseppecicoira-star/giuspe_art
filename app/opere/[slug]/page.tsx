@@ -116,7 +116,7 @@ export default async function WorkPage({ params }: PageProps) {
       <section className="work-fragments">
         <div>
           <p className="section-label">Frammenti</p>
-          <h2>Tracce per riconoscere, non per capire.</h2>
+          <h2>Frammenti lasciati nella stanza.</h2>
         </div>
         <div className="fragment-stack">
           {work.fragments.map((fragment) => (

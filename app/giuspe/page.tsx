@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { SiteNav } from "@/components/site-nav";
 
 export const metadata: Metadata = {
@@ -24,9 +25,15 @@ export default function GiuspePage() {
       </section>
 
       <section className="giuspe-note">
-        <div className="quiet-portrait" aria-hidden="true">
-          <span>G</span>
-        </div>
+        <figure className="author-portrait">
+          <Image
+            src="/giuspe-portrait.png"
+            alt="Giuspe nello studio"
+            width={1448}
+            height={1086}
+            sizes="(min-width: 920px) 36vw, 100vw"
+          />
+        </figure>
         <div>
           <p>
             Giuspe non è un personaggio separato da Giuseppe Cicoira. È il modo

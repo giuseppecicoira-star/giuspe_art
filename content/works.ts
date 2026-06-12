@@ -64,15 +64,15 @@ export const works: Work[] = [
     status: "published",
     releaseHint: "prima porta aperta",
     theme:
-      "Un istante sospeso: il mistero dei Fantasma Melissa prima che la luce diventi presenza.",
+      "Nel mistero del fantasma Melissa, la fine resta sospesa: una luce minuscola comincia a cercare il mondo.",
     shortDescription:
-      "Un bosco notturno, una presenza indefinita, poi una luce che si frammenta e diventa speranza.",
+      "Nel bosco piove piano. Una presenza quasi invisibile trattiene il respiro, poi la luce si spezza e raggiunge la città.",
     longDescription:
-      "Melissa non cerca colpevoli e non cerca spiegazioni. Osserva l'istante prima, il punto fragile in cui una presenza sembra quasi svanire e invece comincia a cambiare forma.",
+      "Melissa rimane sulla soglia di un passaggio. Non giudica, non consola in fretta: ascolta il punto in cui una presenza sembra perdersi e invece cambia consistenza, diventando un segno possibile per chi sa ancora riconoscere.",
     environment:
       "Bosco notturno, nebbia, pioggia leggera, presenza indefinita, luce distante.",
     vision:
-      "La solitudine iniziale non è il punto di arrivo. La luce esplode, si frammenta, piove sulla città e diventa presenza diffusa: possibilità di riconoscere il prossimo.",
+      "Tra nebbia e pioggia, la solitudine non chiude la scena. Una luce lontana si frantuma in molte schegge, cade sulla città e lascia, sui volti, una possibilità di vicinanza.",
     keywords: [
       "fantasma melissa",
       "mistero",
@@ -127,9 +127,9 @@ export const works: Work[] = [
     visualNotes: [
       {
         id: "melissa-visual-1",
-        title: "Passaggio, non tragedia",
+        title: "Nel bosco, prima della luce",
         description:
-          "L'ambiente deve restare misterioso e compassionevole. Il centro non è il dramma, ma la trasformazione.",
+          "Tra gli alberi non c'è una spiegazione: c'è una presenza trattenuta, una luce che non salva dall'alto ma si rompe e arriva fin dentro la città.",
         mediaType: "image",
       },
       {
@@ -150,15 +150,15 @@ export const works: Work[] = [
     status: "coming_soon",
     releaseHint: "prossima soglia",
     theme:
-      "La ricerca della propria identità in un mondo che vive sul consenso terzo.",
+      "Camminare dentro l'aridità del consenso, finché qualcosa sotto la polvere ricorda il proprio nome.",
     shortDescription:
-      "Un corridoio arido, una camminata stretta, poi piccoli segni di vita che rompono la superficie.",
+      "Un corridoio secco stringe il passo. Poi una crepa, un ramo, il sospetto ostinato di una fioritura.",
     longDescription:
-      "Miseria parte da un luogo secco e claustrofobico. Ogni passo può incrinare il paesaggio. Non è chiaro se il mondo cambi davvero o se cambi lo sguardo di chi lo attraversa.",
+      "Miseria attraversa un mondo che premia le maschere e consuma l'identità. Nel suo paesaggio asciutto, ogni passo misura la distanza tra ciò che si mostra e ciò che resiste sotto la superficie.",
     environment:
       "Corridoio desertico, alberi spogli, aridità, progressiva fioritura.",
     vision:
-      "Un cammino lungo un corridoio arido. Tutto sembra sterile, stretto, consumato. Ogni passo incrina il paesaggio. Gli alberi secchi iniziano a risvegliarsi. Qualcosa fiorisce.",
+      "Il corridoio sembra non finire. Gli alberi restano spogli, il terreno non promette nulla. Poi una minima frattura rompe la crosta: non è salvezza improvvisa, è vita che torna a pretendere spazio.",
     keywords: [
       "identità",
       "consenso",
@@ -207,7 +207,7 @@ export const works: Work[] = [
         id: "miseria-visual-1",
         title: "La vita come conseguenza",
         description:
-          "Il mondo non esplode in colore. Si riattiva piano, come se ogni passo avesse il diritto di restituire materia.",
+          "Il colore non arriva come incendio. Compare ai margini, quasi controvoglia, e rende visibile la materia che non aveva smesso di aspettare.",
         mediaType: "image",
       },
     ],
@@ -221,15 +221,15 @@ export const works: Work[] = [
     status: "coming_soon",
     releaseHint: "porta in avvicinamento",
     theme:
-      "La rinascita dopo gli abusi contro l'ipocrisia delle masse.",
+      "Una ragazza torna intera dove il giudizio voleva lasciarla spezzata.",
     shortDescription:
-      "Una forza silente nasce dove lo sguardo altrui pretendeva di decidere una vita.",
+      "Dal paese degli sguardi nasce una figura quieta, inviolabile, capace di trasformare la ferita in lama.",
     longDescription:
-      "Livida non racconta una vittima ferma dentro il male subito. Racconta una presenza che diventa inviolabile, una lama quieta che non permette più al giudizio esterno di governare la sua forma.",
+      "Livida non prolunga il male subito. Lo oltrepassa. La ragazza smette di lasciare che una voce esterna decida la sua forma: raccoglie il dolore, lo chiude in silenzio, e lo trasforma in una forza che smaschera l'ipocrisia.",
     environment:
       "Paese realistico, sguardi, specchi, caduta, rinascita, figura enorme e silenziosa.",
     vision:
-      "Un paese osserva. Gli sguardi non proteggono: giudicano. Una ragazza cerca un posto nel mondo e finisce nelle mani del male. Ma non scompare. Rinasce. Diventa più grande del paese, più grande delle dita puntate.",
+      "Il paese guarda, commenta, restringe. Lei cade dentro un buio che non le appartiene, poi torna più alta degli sguardi. Non chiede assoluzione: diventa confine, lama quieta, presenza che nessuno può più piegare.",
     keywords: [
       "abuso",
       "ipocrisia",
@@ -277,9 +277,9 @@ export const works: Work[] = [
     visualNotes: [
       {
         id: "livida-visual-1",
-        title: "Non più definita",
+        title: "La quiete che taglia",
         description:
-          "Il trattamento visivo deve evitare la reiterazione del trauma. Il centro è la sovranità conquistata.",
+          "La ferita resta sul fondo. Davanti c'è una figura che ha smesso di appartenere agli sguardi del paese: la sua quiete non consola, taglia.",
         mediaType: "image",
       },
     ],
@@ -293,14 +293,14 @@ export const works: Work[] = [
     status: "locked",
     releaseHint: "porta lontana",
     theme:
-      "La ricerca della profondità e il tentativo di ridurre la distanza interiore in un legame affettivo.",
+      "Anche nella vicinanza resta una parte dell'altro che non si lascia possedere.",
     shortDescription:
       "Due interiorità si cercano, sapendo che qualcosa dell'altro resterà sempre oltre.",
     longDescription:
-      "Non posso immaginare non chiude la distanza. La abita. La vicinanza fisica non basta a possedere l'altro, e proprio questa impossibilità tiene vivo il desiderio di avvicinarsi.",
+      "Non posso immaginare abita lo spazio che rimane tra due presenze. Ci si può sfiorare, chiamare, amare, ma una zona dell'altro resta oltre il linguaggio: non ferisce, custodisce il mistero.",
     environment: "Spazio rarefatto, due interiorità, soglie, distanza, mistero.",
     vision:
-      "Due interiorità si cercano. La vicinanza fisica non elimina la distanza. C'è qualcosa dell'altro che resta sempre oltre, non possedibile, non completamente immaginabile.",
+      "Due interiorità si avvicinano senza annullarsi. Tra loro resta aria, soglia, distanza viva: il punto esatto in cui il desiderio smette di conquistare e impara a restare.",
     keywords: [
       "distanza",
       "legame",
@@ -343,7 +343,7 @@ export const works: Work[] = [
         id: "non-posso-visual-1",
         title: "Oltre la prossimità",
         description:
-          "La pagina deve restare sospesa, senza trasformare il brano in una scena romantica.",
+          "Due presenze vicine si sfiorano senza possedersi. Lo spazio tra loro non è vuoto: è il punto in cui il mistero continua a respirare.",
         mediaType: "image",
       },
     ],
@@ -357,14 +357,14 @@ export const works: Work[] = [
     status: "locked",
     releaseHint: "porta lontana",
     theme:
-      "Il vento raccoglie, solleva, dissolve e trasforma il protagonista nella carezza che arriverà altrove.",
+      "Il vento prende ciò che pesa e lo restituisce altrove in una forma più lieve.",
     shortDescription:
-      "Una collina verde, il vento, la possibilità di dissolversi e continuare come presenza.",
+      "Su una collina aperta, il corpo perde peso: non scompare, cambia modo di raggiungere.",
     longDescription:
-      "Carezza parla di trasformazione. Il vento non accarezza soltanto: raccoglie, solleva, dissolve. A quel punto il protagonista stesso diventa vento, presenza, nuova carezza per qualcun altro.",
+      "Carezza segue una trasformazione senza rumore. Il vento raccoglie ciò che resta, lo solleva, lo dissolve; poi non c'è più un centro da difendere, solo una presenza capace di arrivare altrove.",
     environment: "Collina verde, spazio aperto, aria, movimento, leggerezza.",
     vision:
-      "Una collina verde. Il vento arriva senza violenza. Prima raccoglie, poi solleva, poi dissolve. Il corpo perde peso e smette di essere centro: diventa movimento che potrà raggiungere qualcun altro.",
+      "La collina respira. L'aria non strappa: invita. Ciò che era corpo si lascia attraversare, perde contorno, diventa movimento e continua verso qualcuno che forse non conosce ancora il suo nome.",
     keywords: [
       "carezza",
       "vento",
@@ -412,9 +412,9 @@ export const works: Work[] = [
     visualNotes: [
       {
         id: "carezza-visual-1",
-        title: "Sequenza di trasformazione",
+        title: "Quando il vento ricorda",
         description:
-          "Vento, sollevamento, dissoluzione, trasformazione, nuova carezza: la pagina deve suggerire continuità, non evasione.",
+          "Il vento non porta via: cambia la forma. Ciò che si solleva dalla collina continua altrove, lieve e irraggiungibile.",
         mediaType: "image",
       },
     ],

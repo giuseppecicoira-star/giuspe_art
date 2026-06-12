@@ -61,11 +61,11 @@ export default function Home() {
       <section className="manifesto-section">
         <div className="section-number">01</div>
         <div>
-          <h2>Le opere non spiegano. Permettono un riconoscimento.</h2>
+          <h2>Ogni opera apre una stanza.</h2>
           <p>
-            Il visitatore non deve sentirsi istruito. Deve sentire che qualcosa
-            di già presente dentro di lui ha trovato una forma, un ambiente, una
-            fenditura da attraversare.
+            Le canzoni arrivano come luoghi in penombra: non offrono risposte
+            immediate, ma accendono dettagli, spostano lo sguardo, lasciano
+            emergere qualcosa che forse era già lì.
           </p>
         </div>
       </section>
