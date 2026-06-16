@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import { JourneyMemory } from "@/components/journey-memory";
 import { SiteNav } from "@/components/site-nav";
@@ -7,6 +8,27 @@ import {
   getLatestPublishedWork,
   works,
 } from "@/content/works";
+import { siteDescription, siteName, siteOgImage, siteUrl } from "@/content/site";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    url: siteUrl,
+    siteName,
+    title: siteName,
+    description: siteDescription,
+    images: [siteOgImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteName,
+    description: siteDescription,
+    images: [siteOgImage.url],
+  },
+};
 
 export default function Home() {
   const firstWork = getFirstPublishedWork();

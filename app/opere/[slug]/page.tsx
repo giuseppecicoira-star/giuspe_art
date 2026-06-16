@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { AmbientSoundControl } from "@/components/ambient-sound";
 import { MarkWorkVisited } from "@/components/journey-memory";
 import { SiteNav } from "@/components/site-nav";
+import { siteName } from "@/content/site";
 import { getWorkBySlug, works } from "@/content/works";
 
 type PageProps = {
@@ -26,17 +27,39 @@ export async function generateMetadata({
 
   if (!work) {
     return {
-      title: "Opera non trovata | Giuspe",
+      title: "Opera non trovata",
     };
   }
 
+  const isPublished = work.status === "published";
+
   return {
-    title: `${work.title} | Giuspe`,
+    title: work.title,
     description: work.shortDescription,
+    alternates: {
+      canonical: `/opere/${work.slug}`,
+    },
     openGraph: {
       title: `${work.title} | Giuspe`,
       description: work.shortDescription,
+      url: `/opere/${work.slug}`,
+      siteName,
+      images: [
+        {
+          url: work.heroImage,
+          alt: `${work.title} | Giuspe`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${work.title} | Giuspe`,
+      description: work.shortDescription,
       images: [work.heroImage],
+    },
+    robots: {
+      index: isPublished,
+      follow: true,
     },
   };
 }

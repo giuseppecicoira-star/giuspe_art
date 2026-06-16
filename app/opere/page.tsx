@@ -1,12 +1,31 @@
 import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import { SiteNav } from "@/components/site-nav";
+import { siteName, siteOgImage } from "@/content/site";
 import { futureWorks, works } from "@/content/works";
 
 export const metadata: Metadata = {
-  title: "Opere | Giuspe",
+  title: "Opere",
   description:
     "Il percorso delle opere di Giuspe: musica, visioni, ambienti e porte non ancora aperte.",
+  alternates: {
+    canonical: "/opere",
+  },
+  openGraph: {
+    title: "Opere | Giuspe",
+    description:
+      "Il percorso delle opere di Giuspe: musica, visioni, ambienti e porte non ancora aperte.",
+    url: "/opere",
+    siteName,
+    images: [siteOgImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Opere | Giuspe",
+    description:
+      "Il percorso delle opere di Giuspe: musica, visioni, ambienti e porte non ancora aperte.",
+    images: [siteOgImage.url],
+  },
 };
 
 export default function WorksPage() {

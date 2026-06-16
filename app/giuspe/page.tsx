@@ -1,11 +1,30 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { SiteNav } from "@/components/site-nav";
+import { siteName, siteOgImage } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "Giuspe | Presenza",
+  title: "Presenza",
   description:
     "Una pagina discreta sulla presenza reale dietro il progetto narrativo Giuspe.",
+  alternates: {
+    canonical: "/giuspe",
+  },
+  openGraph: {
+    title: "Giuspe | Presenza",
+    description:
+      "Una pagina discreta sulla presenza reale dietro il progetto narrativo Giuspe.",
+    url: "/giuspe",
+    siteName,
+    images: [siteOgImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Giuspe | Presenza",
+    description:
+      "Una pagina discreta sulla presenza reale dietro il progetto narrativo Giuspe.",
+    images: [siteOgImage.url],
+  },
 };
 
 export default function GiuspePage() {

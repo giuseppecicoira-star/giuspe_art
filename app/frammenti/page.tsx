@@ -1,12 +1,31 @@
 import type { Metadata } from "next";
 import { SiteNav } from "@/components/site-nav";
 import { fragments } from "@/content/fragments";
+import { siteName, siteOgImage } from "@/content/site";
 import { works } from "@/content/works";
 
 export const metadata: Metadata = {
-  title: "Frammenti | Giuspe",
+  title: "Frammenti",
   description:
     "Appunti, osservazioni e tracce brevi dall'ecosistema narrativo di Giuspe.",
+  alternates: {
+    canonical: "/frammenti",
+  },
+  openGraph: {
+    title: "Frammenti | Giuspe",
+    description:
+      "Appunti, osservazioni e tracce brevi dall'ecosistema narrativo di Giuspe.",
+    url: "/frammenti",
+    siteName,
+    images: [siteOgImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Frammenti | Giuspe",
+    description:
+      "Appunti, osservazioni e tracce brevi dall'ecosistema narrativo di Giuspe.",
+    images: [siteOgImage.url],
+  },
 };
 
 export default function FragmentsPage() {
