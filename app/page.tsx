@@ -8,7 +8,15 @@ import {
   getLatestPublishedWork,
   works,
 } from "@/content/works";
-import { siteDescription, siteName, siteOgImage, siteUrl } from "@/content/site";
+import {
+  musicLinks,
+  newsletterEmail,
+  siteDescription,
+  siteName,
+  siteOgImage,
+  siteUrl,
+  socialLinks,
+} from "@/content/site";
 
 export const metadata: Metadata = {
   alternates: {
@@ -162,7 +170,12 @@ export default function Home() {
             viaggio, lascia una traccia.
           </p>
         </div>
-        <form className="trace-form" action="#" method="get">
+        <form
+          className="trace-form"
+          action={`mailto:${newsletterEmail}`}
+          method="post"
+          encType="text/plain"
+        >
           <label htmlFor="name">Nome, se vuoi</label>
           <input id="name" name="name" placeholder="Come vuoi essere chiamato" />
           <label htmlFor="email">Email</label>
@@ -186,12 +199,12 @@ export default function Home() {
         </a>
         <p>Musica per attraversare le crepe della realtà.</p>
         <nav aria-label="Link esterni">
-          <a href="https://www.youtube.com/">YouTube</a>
-          <a href="https://open.spotify.com/">Spotify</a>
-          <a href="#">Instagram</a>
-          <a href="#">TikTok</a>
-          <a href="#">Facebook</a>
-          <a href="mailto:booking@giuspe.it">Contatti</a>
+          <a href={musicLinks.spotify}>Spotify</a>
+          <a href={musicLinks.appleMusic}>Apple Music</a>
+          <a href={musicLinks.amazonMusic}>Amazon Music</a>
+          <a href={musicLinks.tidal}>TIDAL</a>
+          <a href={socialLinks.instagram}>Instagram</a>
+          <a href={`mailto:${newsletterEmail}`}>Newsletter</a>
           <a href="#">Privacy</a>
         </nav>
       </footer>

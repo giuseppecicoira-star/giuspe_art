@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { AmbientSoundControl } from "@/components/ambient-sound";
 import { MarkWorkVisited } from "@/components/journey-memory";
 import { SiteNav } from "@/components/site-nav";
-import { siteName } from "@/content/site";
+import { musicLinks, siteName } from "@/content/site";
 import { getWorkBySlug, works } from "@/content/works";
 
 type PageProps = {
@@ -162,6 +162,8 @@ export default async function WorkPage({ params }: PageProps) {
           <div>
             <a href={work.spotifyUrl}>Spotify</a>
             <a href={work.appleMusicUrl}>Apple Music</a>
+            <a href={musicLinks.amazonMusic}>Amazon Music</a>
+            <a href={musicLinks.tidal}>TIDAL</a>
           </div>
         </div>
       </section>

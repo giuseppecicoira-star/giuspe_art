@@ -1,3 +1,5 @@
+import { musicLinks } from "@/content/site";
+
 export type WorkStatus = "published" | "coming_soon" | "hidden" | "locked" | "draft";
 
 export type AmbientSoundProfile =
@@ -93,9 +95,9 @@ export const works: Work[] = [
       muted: "#6f7780",
     },
     heroImage: "/opere/melissa.png",
-    spotifyUrl: "https://open.spotify.com/",
+    spotifyUrl: musicLinks.spotify,
     youtubeUrl: "https://www.youtube.com/",
-    appleMusicUrl: "https://music.apple.com/",
+    appleMusicUrl: musicLinks.appleMusic,
     ambientSound: {
       profile: "rain_forest",
       label: "Pioggia nel bosco",
@@ -177,9 +179,9 @@ export const works: Work[] = [
       muted: "#6f624f",
     },
     heroImage: "/opere/miseria.png",
-    spotifyUrl: "https://open.spotify.com/",
+    spotifyUrl: musicLinks.spotify,
     youtubeUrl: "https://www.youtube.com/",
-    appleMusicUrl: "https://music.apple.com/",
+    appleMusicUrl: musicLinks.appleMusic,
     ambientSound: {
       profile: "dry_wind",
       label: "Vento secco",
@@ -249,9 +251,9 @@ export const works: Work[] = [
       muted: "#756670",
     },
     heroImage: "/opere/livida.png",
-    spotifyUrl: "https://open.spotify.com/",
+    spotifyUrl: musicLinks.spotify,
     youtubeUrl: "https://www.youtube.com/",
-    appleMusicUrl: "https://music.apple.com/",
+    appleMusicUrl: musicLinks.appleMusic,
     ambientSound: {
       profile: "tense_village",
       label: "Paese distante",
@@ -319,9 +321,9 @@ export const works: Work[] = [
       muted: "#666d7a",
     },
     heroImage: "/opere/non-posso-immaginare.png",
-    spotifyUrl: "https://open.spotify.com/",
+    spotifyUrl: musicLinks.spotify,
     youtubeUrl: "https://www.youtube.com/",
-    appleMusicUrl: "https://music.apple.com/",
+    appleMusicUrl: musicLinks.appleMusic,
     ambientSound: {
       profile: "distant_room",
       label: "Distanza rarefatta",
@@ -384,9 +386,9 @@ export const works: Work[] = [
       muted: "#64745f",
     },
     heroImage: "/opere/carezza.png",
-    spotifyUrl: "https://open.spotify.com/",
+    spotifyUrl: musicLinks.spotify,
     youtubeUrl: "https://www.youtube.com/",
-    appleMusicUrl: "https://music.apple.com/",
+    appleMusicUrl: musicLinks.appleMusic,
     ambientSound: {
       profile: "open_wind",
       label: "Vento morbido",

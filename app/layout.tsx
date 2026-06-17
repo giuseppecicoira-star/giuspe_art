@@ -6,6 +6,7 @@ import {
   siteOgImage,
   siteTitle,
   siteUrl,
+  officialProfileLinks,
 } from "@/content/site";
 import "./globals.css";
 
@@ -59,6 +60,7 @@ const structuredData = {
   image: `${siteUrl}${siteOgImage.url}`,
   description: siteDescription,
   genre: ["cantautorale", "alternative", "rock", "elettronica", "progressive"],
+  sameAs: officialProfileLinks,
   member: {
     "@type": "Person",
     name: "Giuseppe Cicoira",
