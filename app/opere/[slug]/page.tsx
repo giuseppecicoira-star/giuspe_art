@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { AmbientSoundControl } from "@/components/ambient-sound";
 import { MarkWorkVisited } from "@/components/journey-memory";
 import { SiteNav } from "@/components/site-nav";
-import { musicLinks, siteName } from "@/content/site";
+import { absoluteUrl, musicLinks, siteName } from "@/content/site";
 import { getWorkBySlug, works } from "@/content/works";
 
 type PageProps = {
@@ -27,35 +27,44 @@ export async function generateMetadata({
 
   if (!work) {
     return {
-      title: "Opera non trovata",
+      title: {
+        absolute: "Opera non trovata — Giuspe",
+      },
     };
   }
 
   const isPublished = work.status === "published";
+  const pageTitle = `${work.title} — Giuspe`;
+  const pageUrl = absoluteUrl(`/opere/${work.slug}`);
+  const imageUrl = absoluteUrl(work.heroImage);
 
   return {
-    title: work.title,
+    title: {
+      absolute: pageTitle,
+    },
     description: work.shortDescription,
     alternates: {
-      canonical: `/opere/${work.slug}`,
+      canonical: pageUrl,
     },
     openGraph: {
-      title: `${work.title} | Giuspe`,
+      type: "website",
+      locale: "it_IT",
+      title: pageTitle,
       description: work.shortDescription,
-      url: `/opere/${work.slug}`,
+      url: pageUrl,
       siteName,
       images: [
         {
-          url: work.heroImage,
-          alt: `${work.title} | Giuspe`,
+          url: imageUrl,
+          alt: pageTitle,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${work.title} | Giuspe`,
+      title: pageTitle,
       description: work.shortDescription,
-      images: [work.heroImage],
+      images: [imageUrl],
     },
     robots: {
       index: isPublished,

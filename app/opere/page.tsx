@@ -1,29 +1,35 @@
 import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import { SiteNav } from "@/components/site-nav";
-import { siteName, siteOgImage } from "@/content/site";
+import { absoluteUrl, siteName, siteOgImage } from "@/content/site";
 import { futureWorks, works } from "@/content/works";
 
+const pageTitle = "Opere — Giuspe";
+const pageDescription =
+  "Alcune opere sono già attraversabili, altre si avvicinano e altre restano forme lontane finché non sarà il momento. La canzone è una soglia.";
+const pageUrl = absoluteUrl("/opere");
+
 export const metadata: Metadata = {
-  title: "Opere",
-  description:
-    "Il percorso delle opere di Giuspe: musica, visioni, ambienti e porte non ancora aperte.",
+  title: {
+    absolute: pageTitle,
+  },
+  description: pageDescription,
   alternates: {
-    canonical: "/opere",
+    canonical: pageUrl,
   },
   openGraph: {
-    title: "Opere | Giuspe",
-    description:
-      "Il percorso delle opere di Giuspe: musica, visioni, ambienti e porte non ancora aperte.",
-    url: "/opere",
+    type: "website",
+    locale: "it_IT",
+    title: pageTitle,
+    description: pageDescription,
+    url: pageUrl,
     siteName,
     images: [siteOgImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Opere | Giuspe",
-    description:
-      "Il percorso delle opere di Giuspe: musica, visioni, ambienti e porte non ancora aperte.",
+    title: pageTitle,
+    description: pageDescription,
     images: [siteOgImage.url],
   },
 };

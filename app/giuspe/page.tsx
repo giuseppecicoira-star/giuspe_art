@@ -1,28 +1,34 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { SiteNav } from "@/components/site-nav";
-import { siteName, siteOgImage } from "@/content/site";
+import { absoluteUrl, siteName, siteOgImage } from "@/content/site";
+
+const pageTitle = "Giuspe — Giuseppe Cicoira, autore e musicista";
+const pageDescription =
+  "Giuspe è il modo in cui Giuseppe Cicoira viene riconosciuto nella sua essenza: musica, visioni, parole e porte che si aprono una alla volta.";
+const pageUrl = absoluteUrl("/giuspe");
 
 export const metadata: Metadata = {
-  title: "Presenza",
-  description:
-    "Una pagina discreta sulla presenza reale dietro il progetto narrativo Giuspe.",
+  title: {
+    absolute: pageTitle,
+  },
+  description: pageDescription,
   alternates: {
-    canonical: "/giuspe",
+    canonical: pageUrl,
   },
   openGraph: {
-    title: "Giuspe | Presenza",
-    description:
-      "Una pagina discreta sulla presenza reale dietro il progetto narrativo Giuspe.",
-    url: "/giuspe",
+    type: "website",
+    locale: "it_IT",
+    title: pageTitle,
+    description: pageDescription,
+    url: pageUrl,
     siteName,
     images: [siteOgImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Giuspe | Presenza",
-    description:
-      "Una pagina discreta sulla presenza reale dietro il progetto narrativo Giuspe.",
+    title: pageTitle,
+    description: pageDescription,
     images: [siteOgImage.url],
   },
 };

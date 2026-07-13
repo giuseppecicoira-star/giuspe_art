@@ -1,22 +1,28 @@
 export const siteUrl = "https://giuspe.it";
 
+export const siteCanonicalUrl = `${siteUrl}/`;
+
+export function absoluteUrl(path: string) {
+  return new URL(path, siteCanonicalUrl).toString();
+}
+
 export const siteHost = "giuspe.it";
 
 export const siteName = "Giuspe";
 
-export const siteTitle = "Giuspe";
+export const siteTitle = "Giuspe — Autore e musicista";
 
 export const siteDescription =
-  "Musica per attraversare le crepe della realtà.";
+  "Giuspe è un autore e musicista italiano. Musica, parole e ambienti visivi diventano punti di osservazione da attraversare.";
 
 export const siteLongDescription =
-  "Una esperienza narrativa digitale per attraversare le opere, i frammenti e le visioni di Giuspe.";
+  "Giuspe è un autore e musicista italiano. Le sue opere uniscono musica, parole e ambienti visivi in un percorso narrativo.";
 
 export const siteOgImage = {
-  url: "/giuspe-portrait.png",
-  width: 1448,
-  height: 1086,
-  alt: "Giuspe nello studio",
+  url: absoluteUrl("/giuspe-studio.png"),
+  width: 1737,
+  height: 906,
+  alt: "Studio sonoro del progetto Giuspe",
 };
 
 export const newsletterEmail = "news@giuspe.it";

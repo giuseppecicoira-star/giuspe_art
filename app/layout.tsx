@@ -6,6 +6,7 @@ import {
   siteName,
   siteOgImage,
   siteTitle,
+  siteCanonicalUrl,
   siteUrl,
   officialProfileLinks,
 } from "@/content/site";
@@ -14,29 +15,29 @@ import "./globals.css";
 const googleTagManagerId = "GTM-K7S4P7DH";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(siteCanonicalUrl),
   applicationName: siteName,
   title: {
     default: siteTitle,
-    template: `%s | ${siteName}`,
+    template: `%s — ${siteName}`,
   },
-  description: siteLongDescription,
-  authors: [{ name: "Giuseppe Cicoira", url: siteUrl }],
+  description: siteDescription,
+  authors: [{ name: "Giuseppe Cicoira", url: siteCanonicalUrl }],
   creator: "Giuseppe Cicoira",
   publisher: siteName,
   category: "music",
   keywords: [
     "Giuspe",
     "Giuseppe Cicoira",
-    "musica cantautorale",
-    "musica alternative",
-    "progetto musicale",
-    "canzoni introspettive",
+    "autore e musicista italiano",
+    "opere musicali",
+    "ambienti visivi",
+    "frammenti narrativi",
   ],
   openGraph: {
     type: "website",
     locale: "it_IT",
-    url: siteUrl,
+    url: siteCanonicalUrl,
     siteName,
     title: siteTitle,
     description: siteDescription,
@@ -56,18 +57,15 @@ export const metadata: Metadata = {
 
 const structuredData = {
   "@context": "https://schema.org",
-  "@type": "MusicGroup",
+  "@type": "Person",
+  "@id": `${siteUrl}/#person`,
   name: siteName,
   alternateName: "Giuseppe Cicoira",
-  url: siteUrl,
-  image: `${siteUrl}${siteOgImage.url}`,
-  description: siteDescription,
-  genre: ["cantautorale", "alternative", "rock", "elettronica", "progressive"],
+  url: siteCanonicalUrl,
+  mainEntityOfPage: siteCanonicalUrl,
+  description: siteLongDescription,
+  jobTitle: "Autore e musicista",
   sameAs: officialProfileLinks,
-  member: {
-    "@type": "Person",
-    name: "Giuseppe Cicoira",
-  },
 };
 
 export default function RootLayout({

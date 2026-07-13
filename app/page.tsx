@@ -11,28 +11,34 @@ import {
 import {
   musicLinks,
   newsletterEmail,
+  siteCanonicalUrl,
   siteDescription,
   siteName,
   siteOgImage,
-  siteUrl,
+  siteTitle,
   socialLinks,
 } from "@/content/site";
 
 export const metadata: Metadata = {
+  title: {
+    absolute: siteTitle,
+  },
+  description: siteDescription,
   alternates: {
-    canonical: "/",
+    canonical: siteCanonicalUrl,
   },
   openGraph: {
     type: "website",
-    url: siteUrl,
+    locale: "it_IT",
+    url: siteCanonicalUrl,
     siteName,
-    title: siteName,
+    title: siteTitle,
     description: siteDescription,
     images: [siteOgImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: siteName,
+    title: siteTitle,
     description: siteDescription,
     images: [siteOgImage.url],
   },
