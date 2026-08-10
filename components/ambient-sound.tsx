@@ -12,6 +12,8 @@ type AmbientSoundControlProps = {
   };
   ambientVolume: number;
   loop: boolean;
+  compact?: boolean;
+  workSlug?: string;
 };
 
 type AmbientEngine = {
@@ -24,6 +26,25 @@ type WindowWithWebkitAudio = Window &
   typeof globalThis & {
     webkitAudioContext?: typeof AudioContext;
   };
+
+type WindowWithDataLayer = Window &
+  typeof globalThis & {
+    dataLayer?: Record<string, unknown>[];
+  };
+
+function trackAmbientEnabled(workSlug: string | undefined, profile: string) {
+  try {
+    const target = window as WindowWithDataLayer;
+    target.dataLayer = target.dataLayer ?? [];
+    target.dataLayer.push({
+      event: "ambient_sound_enabled",
+      work_slug: workSlug,
+      sound_profile: profile,
+    });
+  } catch {
+    // Analytics must never block the listening experience.
+  }
+}
 
 function createNoiseSource(
   context: AudioContext,
@@ -135,6 +156,8 @@ export function AmbientSoundControl({
   ambientSound,
   ambientVolume,
   loop,
+  compact = false,
+  workSlug,
 }: AmbientSoundControlProps) {
   const engineRef = useRef<AmbientEngine | null>(null);
   const [isActive, setIsActive] = useState(false);
@@ -210,12 +233,21 @@ export function AmbientSoundControl({
     };
     setIsActive(true);
     setMessage("Ambiente attivo.");
-  }, [ambientSound.profile, ambientVolume, loop, stopAmbient]);
+    trackAmbientEnabled(workSlug, ambientSound.profile);
+  }, [ambientSound.profile, ambientVolume, loop, stopAmbient, workSlug]);
 
   useEffect(() => stopAmbient, [stopAmbient]);
 
+  useEffect(() => {
+    window.addEventListener("giuspe-video-started", stopAmbient);
+    return () => window.removeEventListener("giuspe-video-started", stopAmbient);
+  }, [stopAmbient]);
+
   return (
-    <section className="ambient-sound" aria-label="Ambiente sonoro">
+    <section
+      className={`ambient-sound${compact ? " ambient-sound-compact" : ""}`}
+      aria-label="Ambiente sonoro"
+    >
       <div>
         <p className="section-label">Ambiente sonoro</p>
         <h2>{ambientSound.label}</h2>

@@ -64,11 +64,11 @@ export const works: Work[] = [
     subtitle: "Il silenzio prima di una scelta definitiva.",
     order: 1,
     status: "published",
-    releaseHint: "prima porta aperta",
+    releaseHint: "14 agosto 2026 · 19:30",
     theme:
-      "Nel mistero del fantasma Melissa, la fine resta sospesa: una luce minuscola comincia a cercare il mondo.",
+      "Nel mistero del fantasma Melissa, una presenza nel bosco attraversa sguardi, nebbia, rosso e luce.",
     shortDescription:
-      "Nel bosco piove piano. Una presenza quasi invisibile trattiene il respiro, poi la luce si spezza e raggiunge la città.",
+      "Melissa attraversa bosco, nebbia, sguardi e luce: un’opera su ciò che resta quando una storia continua nella memoria.",
     longDescription:
       "Melissa rimane sulla soglia di un passaggio. Non giudica, non consola in fretta: ascolta il punto in cui una presenza sembra perdersi e invece cambia consistenza, diventando un segno possibile per chi sa ancora riconoscere.",
     environment:
@@ -96,7 +96,7 @@ export const works: Work[] = [
     },
     heroImage: "/opere/melissa.png",
     spotifyUrl: musicLinks.spotify,
-    youtubeUrl: "https://www.youtube.com/",
+    youtubeUrl: "https://youtu.be/jqYhNGhTDSk",
     appleMusicUrl: musicLinks.appleMusic,
     ambientSound: {
       profile: "rain_forest",

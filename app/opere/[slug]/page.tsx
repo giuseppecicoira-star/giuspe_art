@@ -3,6 +3,7 @@ import type { CSSProperties } from "react";
 import { notFound } from "next/navigation";
 import { AmbientSoundControl } from "@/components/ambient-sound";
 import { MarkWorkVisited } from "@/components/journey-memory";
+import { MelissaExperience } from "@/components/melissa-experience";
 import { SiteNav } from "@/components/site-nav";
 import { absoluteUrl, musicLinks, siteName } from "@/content/site";
 import { getWorkBySlug, works } from "@/content/works";
@@ -84,6 +85,10 @@ export default async function WorkPage({ params }: PageProps) {
   const previousWork = works.find((item) => item.order === work.order - 1);
   const nextWork = works.find((item) => item.order === work.order + 1);
   const isPublished = work.status === "published";
+
+  if (work.slug === "melissa") {
+    return <MelissaExperience work={work} nextWork={nextWork} />;
+  }
 
   return (
     <main
