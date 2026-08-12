@@ -3,6 +3,7 @@ import type { CSSProperties } from "react";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNav } from "@/components/site-nav";
 import { absoluteUrl, siteName, siteOgImage } from "@/content/site";
+import { teasedWorks } from "@/content/teased-works";
 import { futureWorks, works } from "@/content/works";
 
 const pageTitle = "Opere — Giuspe";
@@ -83,6 +84,43 @@ export default function WorksPage() {
             </div>
           </article>
         ))}
+      </section>
+
+      <section className="glimpsed-doors" aria-labelledby="glimpsed-doors-title">
+        <div className="glimpsed-doors-heading">
+          <p className="section-label">Porte intraviste</p>
+          <h2 id="glimpsed-doors-title">Una costellazione non ancora ordinata.</h2>
+          <p>
+            Alcuni titoli esistono già, ma non hanno ancora scelto la loro porta.
+            Restano come segni sparsi: nomi, attriti, immagini minime. Arriveranno
+            uno alla volta, quando il percorso saprà reggere la loro luce.
+          </p>
+        </div>
+
+        <div className="glimpsed-grid" aria-label="Brani futuri intravisti">
+          {teasedWorks.map((work, index) => (
+            <article className="glimpsed-card" key={work.title}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <div>
+                <p>{work.state}</p>
+                <h3>{work.title}</h3>
+                <small>{work.clue}</small>
+              </div>
+              <em>{work.motif}</em>
+            </article>
+          ))}
+        </div>
+
+        <aside className="participation-seed">
+          <p className="section-label">Semi futuri</p>
+          <h3>Quando ci saranno occhi dentro il percorso, alcune porte potranno rispondere.</h3>
+          <p>
+            La futura PWA potrà custodire progressi, indizi e scelte: non solo
+            aggiornamenti, ma piccoli attraversamenti. Chi segue davvero il viaggio
+            potrà riconoscere frammenti, sbloccare stanze e forse orientare quale
+            soglia aprire dopo.
+          </p>
+        </aside>
       </section>
       <SiteFooter />
     </main>
