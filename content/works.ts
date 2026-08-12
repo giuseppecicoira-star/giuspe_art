@@ -96,7 +96,7 @@ export const works: Work[] = [
     },
     heroImage: "/opere/melissa.png",
     spotifyUrl: musicLinks.spotify,
-    youtubeUrl: "https://youtu.be/jqYhNGhTDSk",
+    youtubeUrl: "https://youtu.be/91tZeJ453zc",
     appleMusicUrl: musicLinks.appleMusic,
     ambientSound: {
       profile: "rain_forest",

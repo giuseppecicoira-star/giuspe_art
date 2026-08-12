@@ -1,8 +1,8 @@
 export const melissaRelease = {
   dateTime: "2026-08-14T19:30:00+02:00",
   label: "14 agosto 2026 alle 19:30",
-  videoId: "jqYhNGhTDSk",
-  videoUrl: "https://youtu.be/jqYhNGhTDSk",
+  videoId: "91tZeJ453zc",
+  videoUrl: "https://youtu.be/91tZeJ453zc",
 };
 
 export type MelissaTextBlock =
