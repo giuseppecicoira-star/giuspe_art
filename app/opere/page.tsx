@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { CSSProperties } from "react";
+import { SiteFooter } from "@/components/site-footer";
 import { SiteNav } from "@/components/site-nav";
 import { absoluteUrl, siteName, siteOgImage } from "@/content/site";
 import { futureWorks, works } from "@/content/works";
@@ -83,6 +84,7 @@ export default function WorksPage() {
           </article>
         ))}
       </section>
+      <SiteFooter />
     </main>
   );
 }

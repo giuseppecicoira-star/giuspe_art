@@ -25,10 +25,14 @@ export const siteOgImage = {
   alt: "Studio sonoro del progetto Giuspe",
 };
 
-export const newsletterEmail = "news@giuspe.it";
+export const contactEmail = "news@giuspe.it";
 
 export const socialLinks = {
-  instagram: "https://instagram.com/giuspe_music?igshid=YTQwZjQ0NmI0OA==",
+  facebook: "https://www.facebook.com/GiuspeArts",
+  instagram: "https://www.instagram.com/giuspe_music/",
+  threads: "https://www.threads.com/@giuspe_music",
+  tiktok: "https://www.tiktok.com/@giuspe.music.indi",
+  youtube: "https://www.youtube.com/@GiuspeMusic",
 };
 
 export const musicLinks = {
@@ -42,7 +46,11 @@ export const musicLinks = {
 };
 
 export const officialProfileLinks = [
+  socialLinks.facebook,
   socialLinks.instagram,
+  socialLinks.threads,
+  socialLinks.tiktok,
+  socialLinks.youtube,
   musicLinks.spotify,
   musicLinks.appleMusic,
   musicLinks.amazonMusic,

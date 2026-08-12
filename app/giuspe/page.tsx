@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { SiteFooter } from "@/components/site-footer";
 import { SiteNav } from "@/components/site-nav";
 import { absoluteUrl, siteName, siteOgImage } from "@/content/site";
 
@@ -75,6 +76,7 @@ export default function GiuspePage() {
           </a>
         </div>
       </section>
+      <SiteFooter />
     </main>
   );
 }

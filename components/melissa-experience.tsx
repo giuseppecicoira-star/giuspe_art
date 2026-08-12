@@ -1,13 +1,14 @@
 import type { CSSProperties } from "react";
+import { AppUpdatesNotice } from "@/components/app-updates-notice";
 import { AmbientSoundControl } from "@/components/ambient-sound";
 import {
   MelissaJourneyTracker,
-  MelissaNewsletterForm,
   MelissaReleaseCopy,
   MelissaRewatchButton,
   MelissaStreamingLink,
   MelissaVideoGate,
 } from "@/components/melissa-experience-controls";
+import { SiteFooter } from "@/components/site-footer";
 import { SiteNav } from "@/components/site-nav";
 import {
   melissaNotes,
@@ -18,7 +19,7 @@ import {
   melissaTransition,
   type MelissaTextBlock,
 } from "@/content/melissa-experience";
-import { musicLinks, newsletterEmail } from "@/content/site";
+import { musicLinks } from "@/content/site";
 import type { Work } from "@/content/works";
 
 function renderBlock(block: MelissaTextBlock, index: number) {
@@ -210,11 +211,14 @@ export function MelissaExperience({
           <p className="section-label">continua il viaggio</p>
           <h2>Il percorso continua</h2>
           <p>
-            Melissa è la prima porta. Altre si apriranno. Se vuoi sapere quando
-            sarà il momento di proseguire, lascia una traccia.
+            Melissa è la prima porta. Altre si apriranno. Gli aggiornamenti
+            passeranno anche dalla PWA di Giuspe, quando sarà pronta.
           </p>
         </div>
-        <MelissaNewsletterForm newsletterEmail={newsletterEmail} />
+        <AppUpdatesNotice
+          className="app-updates-notice melissa-app-updates"
+          ctaLabel="PWA in arrivo"
+        />
       </section>
 
       <nav className="work-nav melissa-work-nav" aria-label="Opera successiva">
@@ -225,6 +229,7 @@ export function MelissaExperience({
           <a href="/#continua">Continua il viaggio</a>
         )}
       </nav>
+      <SiteFooter />
     </main>
   );
 }

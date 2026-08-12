@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import type { CSSProperties } from "react";
+import { AppUpdatesNotice } from "@/components/app-updates-notice";
 import { JourneyMemory } from "@/components/journey-memory";
+import { SiteFooter } from "@/components/site-footer";
 import { SiteNav } from "@/components/site-nav";
 import {
   futureWorks,
@@ -9,14 +11,11 @@ import {
   works,
 } from "@/content/works";
 import {
-  musicLinks,
-  newsletterEmail,
   siteCanonicalUrl,
   siteDescription,
   siteName,
   siteOgImage,
   siteTitle,
-  socialLinks,
 } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -170,50 +169,17 @@ export default function Home() {
         <div>
           <span className="section-number">04</span>
           <p className="section-label">Continua il viaggio</p>
-          <h2>Alcune stanze si apriranno più avanti.</h2>
+          <h2>Alcune stanze si apriranno anche nell&apos;app.</h2>
           <p>
-            Alcuni frammenti non passeranno dai social. Se vuoi continuare il
-            viaggio, lascia una traccia.
+            Alcuni frammenti non passeranno dai social. La PWA di Giuspe
+            raccoglier&agrave; uscite, appunti e notifiche in un luogo pi&ugrave;
+            vicino al progetto.
           </p>
         </div>
-        <form
-          className="trace-form"
-          action={`mailto:${newsletterEmail}`}
-          method="post"
-          encType="text/plain"
-        >
-          <label htmlFor="name">Nome, se vuoi</label>
-          <input id="name" name="name" placeholder="Come vuoi essere chiamato" />
-          <label htmlFor="email">Email</label>
-          <input
-            id="email"
-            name="email"
-            placeholder="la-tua-email@esempio.it"
-            type="email"
-          />
-          <label className="consent-line">
-            <input name="privacy" type="checkbox" />
-            <span>Acconsento a ricevere nuove stanze, frammenti e visioni.</span>
-          </label>
-          <button type="submit">Lascia una traccia</button>
-        </form>
+        <AppUpdatesNotice />
       </section>
 
-      <footer className="site-footer">
-        <a className="footer-brand" href="/">
-          Giuspe
-        </a>
-        <p>Musica per attraversare le crepe della realtà.</p>
-        <nav aria-label="Link esterni">
-          <a href={musicLinks.spotify}>Spotify</a>
-          <a href={musicLinks.appleMusic}>Apple Music</a>
-          <a href={musicLinks.amazonMusic}>Amazon Music</a>
-          <a href={musicLinks.tidal}>TIDAL</a>
-          <a href={socialLinks.instagram}>Instagram</a>
-          <a href={`mailto:${newsletterEmail}`}>Newsletter</a>
-          <a href="#">Privacy</a>
-        </nav>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

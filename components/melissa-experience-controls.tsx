@@ -1,6 +1,6 @@
 "use client";
 
-import type { CSSProperties, FormEvent } from "react";
+import type { CSSProperties } from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 const LAST_WORK_KEY = "giuspe:last-opened-work";
@@ -396,49 +396,5 @@ export function MelissaStreamingLink({ link }: { link: StreamingLink }) {
     >
       {link.label}
     </a>
-  );
-}
-
-export function MelissaNewsletterForm({
-  newsletterEmail,
-}: {
-  newsletterEmail: string;
-}) {
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    const form = event.currentTarget;
-    const email = new FormData(form).get("email");
-
-    track("newsletter_signup", {
-      has_email: typeof email === "string" && email.length > 0,
-    });
-  };
-
-  return (
-    <form
-      action={`mailto:${newsletterEmail}`}
-      className="trace-form melissa-trace-form"
-      encType="text/plain"
-      method="post"
-      onSubmit={handleSubmit}
-    >
-      <label htmlFor="melissa-name">Nome, se vuoi</label>
-      <input
-        id="melissa-name"
-        name="name"
-        placeholder="Come vuoi essere chiamato"
-      />
-      <label htmlFor="melissa-email">Email</label>
-      <input
-        id="melissa-email"
-        name="email"
-        placeholder="la-tua-email@esempio.it"
-        type="email"
-      />
-      <label className="consent-line">
-        <input name="privacy" type="checkbox" />
-        <span>Acconsento a ricevere nuove stanze, frammenti e visioni.</span>
-      </label>
-      <button type="submit">Continua il viaggio</button>
-    </form>
   );
 }

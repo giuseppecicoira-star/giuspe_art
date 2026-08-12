@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { AmbientSoundControl } from "@/components/ambient-sound";
 import { MarkWorkVisited } from "@/components/journey-memory";
 import { MelissaExperience } from "@/components/melissa-experience";
+import { SiteFooter } from "@/components/site-footer";
 import { SiteNav } from "@/components/site-nav";
 import { absoluteUrl, musicLinks, siteName } from "@/content/site";
 import { getWorkBySlug, works } from "@/content/works";
@@ -206,6 +207,7 @@ export default async function WorkPage({ params }: PageProps) {
           <a href="/#continua">Continua il viaggio</a>
         )}
       </nav>
+      <SiteFooter />
     </main>
   );
 }
