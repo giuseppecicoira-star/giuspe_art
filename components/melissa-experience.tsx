@@ -67,9 +67,9 @@ export function MelissaExperience({
       platform: "apple_music",
     },
     {
-      label: "YouTube",
-      href: work.youtubeUrl,
-      platform: "youtube",
+      label: "YouTube Music",
+      href: work.youtubeMusicUrl,
+      platform: "youtube_music",
     },
     {
       label: "Amazon Music",
@@ -117,7 +117,6 @@ export function MelissaExperience({
         <div className="melissa-entry-copy">
           <p className="section-label">prima porta · {melissaRelease.label}</p>
           <MelissaReleaseCopy
-            forceReleased={work.status === "published"}
             releaseDateTime={melissaRelease.dateTime}
             releaseLabel={melissaRelease.label}
           />

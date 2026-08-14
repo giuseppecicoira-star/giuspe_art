@@ -32,6 +32,7 @@ export type Work = {
   heroImage: string;
   spotifyUrl: string;
   youtubeUrl: string;
+  youtubeMusicUrl?: string;
   appleMusicUrl: string;
   amazonMusicUrl?: string;
   tidalUrl?: string;
@@ -100,7 +101,9 @@ export const works: Work[] = [
     heroImage: "/opere/melissa.png",
     spotifyUrl:
       "https://open.spotify.com/track/4B8KyBSydHVnzfX2sKx9mX?si=BDoYFxEGTWagYKqOthbSQg&utm_source=copy-link&sci=spotify%3Acard-config%3A3puhYYZhoHqec5x4y433SM",
-    youtubeUrl: "https://youtu.be/mYlsdDzmVGE?is=OFV-VORcnNAE6x-L",
+    youtubeUrl: "https://youtu.be/91tZeJ453zc",
+    youtubeMusicUrl:
+      "https://music.youtube.com/watch?v=mYlsdDzmVGE&si=IC2Gi2osRoxjNg28",
     appleMusicUrl: "https://music.apple.com/it/album/melissa-single/6793696752",
     amazonMusicUrl:
       "https://music.amazon.it/albums/B0H9ZND2NL?trackAsin=B0H9ZTBJJJ&do=play&ts=1786665299&ref=dm_sh_vfh3XoTDnlTWHWB4AGVinh0l8",

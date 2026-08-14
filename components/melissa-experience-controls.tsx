@@ -210,23 +210,16 @@ export function MelissaJourneyTracker({
 }
 
 export function MelissaReleaseCopy({
-  forceReleased = false,
   releaseDateTime,
   releaseLabel,
 }: {
-  forceReleased?: boolean;
   releaseDateTime: string;
   releaseLabel: string;
 }) {
   const [isReleased, setIsReleased] = useState(false);
   const [hasOpenedVideo, setHasOpenedVideo] = useState(false);
-  const effectiveIsReleased = forceReleased || isReleased;
 
   useEffect(() => {
-    if (forceReleased) {
-      return;
-    }
-
     const releaseTime = new Date(releaseDateTime).getTime();
     const updateReleaseState = () => setIsReleased(Date.now() >= releaseTime);
 
@@ -243,7 +236,7 @@ export function MelissaReleaseCopy({
         window.clearTimeout(timeoutId);
       }
     };
-  }, [forceReleased, releaseDateTime]);
+  }, [releaseDateTime]);
 
   useEffect(() => {
     const updateVideoState = () =>
@@ -261,7 +254,7 @@ export function MelissaReleaseCopy({
     };
   }, []);
 
-  if (!effectiveIsReleased) {
+  if (!isReleased) {
     return (
       <div className="melissa-release-copy">
         <h1>Melissa</h1>

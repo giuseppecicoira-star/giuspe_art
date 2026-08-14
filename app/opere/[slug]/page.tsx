@@ -96,6 +96,10 @@ export default async function WorkPage({ params }: PageProps) {
       href: work.appleMusicUrl,
     },
     {
+      label: "YouTube Music",
+      href: work.youtubeMusicUrl,
+    },
+    {
       label: "Amazon Music",
       href: work.amazonMusicUrl ?? musicLinks.amazonMusic,
     },
