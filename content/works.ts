@@ -33,6 +33,9 @@ export type Work = {
   spotifyUrl: string;
   youtubeUrl: string;
   appleMusicUrl: string;
+  amazonMusicUrl?: string;
+  tidalUrl?: string;
+  deezerUrl?: string;
   ambientSound: {
     profile: AmbientSoundProfile;
     label: string;
@@ -95,9 +98,15 @@ export const works: Work[] = [
       muted: "#6f7780",
     },
     heroImage: "/opere/melissa.png",
-    spotifyUrl: musicLinks.spotify,
-    youtubeUrl: "https://youtu.be/91tZeJ453zc",
-    appleMusicUrl: musicLinks.appleMusic,
+    spotifyUrl:
+      "https://open.spotify.com/track/4B8KyBSydHVnzfX2sKx9mX?si=BDoYFxEGTWagYKqOthbSQg&utm_source=copy-link&sci=spotify%3Acard-config%3A3puhYYZhoHqec5x4y433SM",
+    youtubeUrl: "https://youtu.be/mYlsdDzmVGE?is=OFV-VORcnNAE6x-L",
+    appleMusicUrl: "https://music.apple.com/it/album/melissa-single/6793696752",
+    amazonMusicUrl:
+      "https://music.amazon.it/albums/B0H9ZND2NL?trackAsin=B0H9ZTBJJJ&do=play&ts=1786665299&ref=dm_sh_vfh3XoTDnlTWHWB4AGVinh0l8",
+    tidalUrl: "https://tidal.com/track/545502188/u",
+    deezerUrl:
+      "https://www.deezer.com/album/1035599862?utm_source=analytics_sharing&utm_medium=mobile&utm_campaign=clipboard-generic&utm_content=album-882197492420",
     ambientSound: {
       profile: "rain_forest",
       label: "Pioggia nel bosco",

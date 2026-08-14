@@ -19,7 +19,6 @@ import {
   melissaTransition,
   type MelissaTextBlock,
 } from "@/content/melissa-experience";
-import { musicLinks } from "@/content/site";
 import type { Work } from "@/content/works";
 
 function renderBlock(block: MelissaTextBlock, index: number) {
@@ -74,15 +73,23 @@ export function MelissaExperience({
     },
     {
       label: "Amazon Music",
-      href: musicLinks.amazonMusic,
+      href: work.amazonMusicUrl,
       platform: "amazon_music",
     },
     {
       label: "TIDAL",
-      href: musicLinks.tidal,
+      href: work.tidalUrl,
       platform: "tidal",
     },
-  ];
+    {
+      label: "Deezer",
+      href: work.deezerUrl,
+      platform: "deezer",
+    },
+  ].filter(
+    (link): link is { label: string; href: string; platform: string } =>
+      Boolean(link.href),
+  );
 
   return (
     <main

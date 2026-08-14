@@ -86,6 +86,28 @@ export default async function WorkPage({ params }: PageProps) {
   const previousWork = works.find((item) => item.order === work.order - 1);
   const nextWork = works.find((item) => item.order === work.order + 1);
   const isPublished = work.status === "published";
+  const streamingLinks = [
+    {
+      label: "Spotify",
+      href: work.spotifyUrl,
+    },
+    {
+      label: "Apple Music",
+      href: work.appleMusicUrl,
+    },
+    {
+      label: "Amazon Music",
+      href: work.amazonMusicUrl ?? musicLinks.amazonMusic,
+    },
+    {
+      label: "TIDAL",
+      href: work.tidalUrl ?? musicLinks.tidal,
+    },
+    {
+      label: "Deezer",
+      href: work.deezerUrl,
+    },
+  ].filter((link): link is { label: string; href: string } => Boolean(link.href));
 
   if (work.slug === "melissa") {
     return <MelissaExperience work={work} nextWork={nextWork} />;
@@ -175,10 +197,11 @@ export default async function WorkPage({ params }: PageProps) {
         <div className="streaming-box">
           <p className="section-label">Musica</p>
           <div>
-            <a href={work.spotifyUrl}>Spotify</a>
-            <a href={work.appleMusicUrl}>Apple Music</a>
-            <a href={musicLinks.amazonMusic}>Amazon Music</a>
-            <a href={musicLinks.tidal}>TIDAL</a>
+            {streamingLinks.map((link) => (
+              <a href={link.href} key={link.label}>
+                {link.label}
+              </a>
+            ))}
           </div>
         </div>
       </section>
